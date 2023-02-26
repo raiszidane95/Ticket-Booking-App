@@ -39,6 +39,8 @@ dependencies:
   google_fonts: ^4.0.3
   fluent_ui: ^4.2.0
   fluentui_system_icons: ^1.1.190
+  get:
+  gap: ^2.0.1
 
 dev_dependencies:
   flutter_test:
