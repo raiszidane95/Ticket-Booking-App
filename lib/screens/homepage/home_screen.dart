@@ -1,7 +1,10 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 
+import '../../utils/app_info_list.dart';
 import '../../utils/style.dart';
+import '../../widgets/card_hotel_widget.dart';
+import '../../widgets/ticket_view_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -55,7 +58,6 @@ class HomeScreen extends StatelessWidget {
                 Row(children: [
                   Expanded(
                     child: Container(
-                      // color: Colors.blueAccent.shade100,
                       height: 35,
                       padding: EdgeInsets.symmetric(horizontal: 8),
                       child: TextField(
@@ -100,8 +102,64 @@ class HomeScreen extends StatelessWidget {
                       ),
                     )
                   ],
-                )
+                ),
               ],
+            ),
+          ),
+          /**
+           * 
+           * Widget Ticket
+           * 
+          */
+          SizedBox(height: 15),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.only(right: 20),
+            child: Row(
+                children: ticketList
+                    .map((singleTicket) => TicketWidget(ticket: singleTicket))
+                    .toList()),
+          ),
+
+          /**
+           * Hotels Content
+          */
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Column(children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Hotels",
+                    style: CustomTextStyles.headlineText2,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      print('object');
+                    },
+                    child: Text(
+                      'View all',
+                      style:
+                          CustomTextStyles.textStyle.copyWith(color: primary),
+                    ),
+                  ),
+                ],
+              ),
+            ]),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.only(right: 20),
+            child: Row(
+              children: hotelList
+                  .map(
+                    (singleHotel) => CardHotelWidget(hotel: singleHotel),
+                  )
+                  .toList(),
             ),
           ),
         ],
