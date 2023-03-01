@@ -153,7 +153,7 @@ class SearchScreen extends StatelessWidget {
                         BorderRadius.circular(AppLayout.getHeight(10)),
                     color: Colors.white),
                 child: SizedBox(
-                  height: AppLayout.getHeight(250),
+                  height: AppLayout.getHeight(300),
                   width: AppLayout.getWidth(150),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -173,10 +173,9 @@ class SearchScreen extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.only(left: 4, top: 10),
-                            alignment: Alignment.centerLeft,
+                            padding: EdgeInsets.all(7),
                             child: Text(
-                              '20%',
+                              '20% discount on early booking of this flights.',
                               style: CustomTextStyles.headlineText1,
                             ),
                           ),
@@ -186,8 +185,29 @@ class SearchScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(20),
+                    width: AppLayout.getSize(context).width * 0.44,
+                    height: AppLayout.getHeight(174),
+                    decoration: BoxDecoration(
+                      color: Color(0xff3ab8b8),
+                      borderRadius:
+                          BorderRadius.circular(AppLayout.getHeight(18)),
+                    ),
+                    child: Column(children: [
+                      Text(
+                        "Discount \nfor survey",
+                        style: CustomTextStyles.headlineText2
+                            .copyWith(color: ColorStyles.bgColor),
+                      )
+                    ]),
+                  ),
+                ],
+              ),
             ],
-          )
+          ),
         ],
       ),
     );

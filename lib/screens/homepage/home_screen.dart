@@ -1,5 +1,6 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 import '../../utils/app_info_list.dart';
 import '../../utils/style.dart';
@@ -11,7 +12,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var bgColor = const Color(0xffeeedf2);
     return Scaffold(
       backgroundColor: ColorStyles.bgColor,
       body: ListView(
@@ -20,9 +20,7 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
-                SizedBox(
-                  height: 60,
-                ),
+                Gap(60),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -33,7 +31,7 @@ class HomeScreen extends StatelessWidget {
                           'Good Morning!',
                           style: CustomTextStyles.headlineText3,
                         ),
-                        SizedBox(height: 5),
+                        Gap(5),
                         Text(
                           'Book Tickets',
                           style: CustomTextStyles.headlineText1,
@@ -52,38 +50,37 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 20,
-                ),
-                Row(children: [
-                  Expanded(
-                    child: Container(
-                      height: 35,
-                      padding: EdgeInsets.symmetric(horizontal: 8),
-                      child: TextField(
-                        textAlignVertical: TextAlignVertical.bottom,
-                        textAlign: TextAlign.start,
-                        style: CustomTextStyles.headlineText4,
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                                borderSide: BorderSide.none),
-                            hintText: 'Search',
-                            filled: true,
-                            fillColor: Color(0xFFF4F6FD),
-                            hintTextDirection: TextDirection.ltr,
-                            prefixIcon: Icon(
-                              FluentIcons.search_20_filled,
-                              color: Color(0xffbfc205),
-                            ),
-                            floatingLabelBehavior: FloatingLabelBehavior.never),
+                Gap(20),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        height: 35,
+                        padding: EdgeInsets.symmetric(horizontal: 8),
+                        child: TextField(
+                          textAlignVertical: TextAlignVertical.bottom,
+                          textAlign: TextAlign.start,
+                          style: CustomTextStyles.headlineText4,
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide.none),
+                              hintText: 'Search',
+                              filled: true,
+                              fillColor: Color(0xFFF4F6FD),
+                              hintTextDirection: TextDirection.ltr,
+                              prefixIcon: Icon(
+                                FluentIcons.search_20_filled,
+                                color: Color(0xffbfc205),
+                              ),
+                              floatingLabelBehavior:
+                                  FloatingLabelBehavior.never),
+                        ),
                       ),
                     ),
-                  ),
-                ]),
-                SizedBox(
-                  height: 40,
+                  ],
                 ),
+                Gap(40),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -126,27 +123,29 @@ class HomeScreen extends StatelessWidget {
           */
           Container(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Column(children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Hotels",
-                    style: CustomTextStyles.headlineText2,
-                  ),
-                  InkWell(
-                    onTap: () {
-                      print('object');
-                    },
-                    child: Text(
-                      'View all',
-                      style:
-                          CustomTextStyles.textStyle.copyWith(color: primary),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Hotels",
+                      style: CustomTextStyles.headlineText2,
                     ),
-                  ),
-                ],
-              ),
-            ]),
+                    InkWell(
+                      onTap: () {
+                        print('object');
+                      },
+                      child: Text(
+                        'View all',
+                        style:
+                            CustomTextStyles.textStyle.copyWith(color: primary),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
           SizedBox(
             height: 15,
