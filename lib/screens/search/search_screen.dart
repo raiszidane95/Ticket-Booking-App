@@ -3,12 +3,14 @@ import 'package:gap/gap.dart';
 
 import '../../utils/app_layout.dart';
 import '../../utils/style.dart';
+import '../../widgets/ticket_tabs_widget.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final Size = AppLayout.getSize(context);
     return Scaffold(
       backgroundColor: ColorStyles.bgColor,
       body: ListView(
@@ -20,32 +22,8 @@ class SearchScreen extends StatelessWidget {
           Text("What are\nyou looking for?",
               style: CustomTextStyles.headlineText1.copyWith(fontSize: 32)),
           Gap(20),
-          Container(
-            padding: EdgeInsets.symmetric(
-                vertical: AppLayout.getHeight(5),
-                horizontal: AppLayout.getHeight(50)),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(AppLayout.getHeight(50)),
-                color: Colors.white),
-            child: SizedBox(
-              height: 25,
-              width: AppLayout.getWidth(80),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Airlines Ticket',
-                    style: CustomTextStyles.headlineText3,
-                  ),
-                  Text(
-                    'Hotels',
-                    style: CustomTextStyles.headlineText3,
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Gap(35),
+          AppTicketTabs(firstTab: 'Airlines Tickets', secondTab: 'Hotels'),
+          const Gap(35),
           Container(
             padding: EdgeInsets.symmetric(
                 vertical: AppLayout.getHeight(5),
@@ -143,6 +121,7 @@ class SearchScreen extends StatelessWidget {
           ),
           Gap(15),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 padding: EdgeInsets.symmetric(
@@ -153,7 +132,7 @@ class SearchScreen extends StatelessWidget {
                         BorderRadius.circular(AppLayout.getHeight(10)),
                     color: Colors.white),
                 child: SizedBox(
-                  height: AppLayout.getHeight(300),
+                  height: AppLayout.getHeight(320),
                   width: AppLayout.getWidth(150),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -175,7 +154,7 @@ class SearchScreen extends StatelessWidget {
                           Container(
                             padding: EdgeInsets.all(7),
                             child: Text(
-                              '20% discount on early booking of this flights.',
+                              "20% discount on early booking of this flights. Don't miss",
                               style: CustomTextStyles.headlineText1,
                             ),
                           ),
@@ -187,21 +166,82 @@ class SearchScreen extends StatelessWidget {
               ),
               Column(
                 children: [
+                  Stack(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(top: 10, right: 30, left: 10),
+                        width: AppLayout.getSize(context).width * 0.40,
+                        height: AppLayout.getHeight(154),
+                        decoration: BoxDecoration(
+                          color: Color(0xff3ab8b8),
+                          borderRadius:
+                              BorderRadius.circular(AppLayout.getHeight(18)),
+                        ),
+                        child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Discount \nfor survey",
+                                style: CustomTextStyles.headlineText2
+                                    .copyWith(color: ColorStyles.bgColor),
+                              ),
+                              Gap(10),
+                              Text(
+                                "Take the survey about out services and get discount",
+                                style: CustomTextStyles.headlineText3
+                                    .copyWith(color: ColorStyles.bgColor),
+                              ),
+                            ]),
+                      ),
+                      Positioned(
+                        right: -45,
+                        top: -40,
+                        child: Container(
+                          padding: EdgeInsets.all(
+                            AppLayout.getHeight(30),
+                          ),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              width: 18,
+                              color: Color(0xff189999),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  Gap(10),
                   Container(
-                    padding: EdgeInsets.all(20),
-                    width: AppLayout.getSize(context).width * 0.44,
-                    height: AppLayout.getHeight(174),
+                    padding: EdgeInsets.only(top: 10, right: 10, left: 10),
+                    width: AppLayout.getSize(context).width * 0.40,
+                    height: AppLayout.getHeight(170),
                     decoration: BoxDecoration(
-                      color: Color(0xff3ab8b8),
+                      color: Color(0xffec6545),
                       borderRadius:
                           BorderRadius.circular(AppLayout.getHeight(18)),
                     ),
                     child: Column(children: [
                       Text(
-                        "Discount \nfor survey",
+                        "Take Love",
                         style: CustomTextStyles.headlineText2
                             .copyWith(color: ColorStyles.bgColor),
-                      )
+                        textAlign: TextAlign.center,
+                      ),
+                      Gap(10),
+                      RichText(
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                                text: '😍', style: TextStyle(fontSize: 23)),
+                            TextSpan(
+                                text: '🥰', style: TextStyle(fontSize: 29)),
+                            TextSpan(
+                                text: '😘', style: TextStyle(fontSize: 24)),
+                          ],
+                        ),
+                      ),
                     ]),
                   ),
                 ],

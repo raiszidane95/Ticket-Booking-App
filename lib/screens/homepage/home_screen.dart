@@ -121,8 +121,11 @@ class HomeScreen extends StatelessWidget {
           /**
            * Hotels Content
           */
+          Gap(20),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(
+              horizontal: 20,
+            ),
             child: Column(
               children: [
                 Row(

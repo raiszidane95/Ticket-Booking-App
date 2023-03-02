@@ -5,7 +5,7 @@ Color primary = const Color(0xff687daf);
 class ColorStyles {
   static Color primaryColor = primary;
   static Color textColor = const Color(0xff3b3b3b);
-  static Color bgColor = const Color(0xffeeedf2);
+  static Color bgColor = Color.fromARGB(255, 236, 236, 236);
   static Color blueHoverColor = const Color(0xff687daf);
   static Color blueColor = const Color(0xff526480);
   static Color orangeColor = const Color(0xFFF37b67);
