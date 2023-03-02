@@ -151,11 +151,11 @@ class TicketScreen extends StatelessWidget {
               padding: EdgeInsets.all(2),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                border: Border.all(color: ColorStyles.textColor, width: 2),
+                border: Border.all(color: Colors.grey, width: 2),
               ),
               child: CircleAvatar(
-                maxRadius: 7,
-                backgroundColor: ColorStyles.textColor,
+                maxRadius: 4,
+                backgroundColor: Colors.grey,
               ),
             ),
           ),
@@ -166,11 +166,11 @@ class TicketScreen extends StatelessWidget {
               padding: EdgeInsets.all(2),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                border: Border.all(color: ColorStyles.textColor, width: 2),
+                border: Border.all(color: Colors.grey, width: 2),
               ),
               child: CircleAvatar(
-                maxRadius: 7,
-                backgroundColor: ColorStyles.textColor,
+                maxRadius: 4,
+                backgroundColor: Colors.grey,
               ),
             ),
           )
